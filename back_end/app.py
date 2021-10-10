@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, render_template
 from flask_cors import CORS
+from Queries import queries
 import csv
 import pandas as pd
 import numpy as np
@@ -19,6 +20,14 @@ def home():
     return jsonify(
         status=200,
         data=survived
+    )
+
+@app.route('/getDeathsByContinent',methods=['GET'])
+def returnDeaths_byContinent():
+    deaths_by_continent = queries.getAll_DeathsByContinent(covid_df).to_json()
+    return jsonify(
+        status=200,
+        data=deaths_by_continent
     )
 
 if __name__ == '__main__':

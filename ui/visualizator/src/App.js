@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import First from './Components/First/First'; 
+import PieChart from './Components/PieChart/PieChart';
 
 function App() {
   return (

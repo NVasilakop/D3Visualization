@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './First.css';
 import axios from "axios"
+import PieChart from '../PieChart/PieChart';
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
 } from "react-router-dom";
-var apiMovieKey = 'https://api.themoviedb.org/3/movie/550?api_key=0744709c0c9f817d56414c84aae9d5c2';
 
 var options = {
     method: 'GET',
@@ -39,6 +40,9 @@ class First extends Component {
   render() {
     return (
       <div>
+        <PieChart>
+  
+        </PieChart>
       </div>
     );
   }
