@@ -7,6 +7,7 @@ import {
   Link,
 } from "react-router-dom";
 import { chart } from '../../Models/chart';
+import * as d3 from "d3";
 
 var options = {
     method: 'GET',
@@ -21,6 +22,17 @@ class PieChart extends Component {
     };
     this.get_Deaths_byContinent();
   }
+
+  componentDidMount() {
+    this.drawChart();
+  }
+
+
+
+drawChart() {
+  
+}
+
 
  get_Deaths_byContinent(){
     axios.request(options).then( (response) => {
@@ -46,9 +58,16 @@ class PieChart extends Component {
 
   render() {
     return (
-      <div>
-          <p> Hello</p>
-      </div>
+     <div className="dropdown">
+        <a className="btn btn-secondary dropwdown-toggle" href="#" role="button" id="dropdownLocation" data-bs-toggle="dropdown" aria-expanded="false">
+          Choose A Location
+        </a>
+
+        <ul className="dropdown-menu" aria-labelledby="dropdownLocation">
+        <li><a className="dropdown-item" href="#">Locations</a></li>
+        <li><a className="dropdown-item" href="#">Continents</a></li>
+        </ul>
+     </div>
     );
   }
 }
